@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj": {}
+    "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj": {
+    "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj",
+        "projectUniqueName": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj",
         "projectName": "JWTProject.Core",
-        "projectPath": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj",
+        "projectPath": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Core\\JWTProject.Core.csproj",
         "packagesPath": "C:\\Users\\karak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Core\\obj\\",
+        "outputPath": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karak\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "JWTProject.Data/1.0.0": {
+        "dependencies": {
+          "JWTProject.Core": "1.0.0"
+        },
+        "runtime": {
+          "JWTProject.Data.dll": {}
+        }
+      },
+      "JWTProject.Core/1.0.0": {
+        "runtime": {
+          "JWTProject.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JWTProject.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JWTProject.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

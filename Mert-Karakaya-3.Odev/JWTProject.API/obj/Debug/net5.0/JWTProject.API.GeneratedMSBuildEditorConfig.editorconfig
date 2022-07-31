@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = JWTProject.API
-build_property.ProjectDir = C:\Users\karak\source\repos\Mert-Karakaya-3.Odev\JWTProject.API\
+build_property.ProjectDir = C:\Users\karak\Documents\GitHub\3-hafta-odev-mertkrkya\Mert-Karakaya-3.Odev\JWTProject.API\

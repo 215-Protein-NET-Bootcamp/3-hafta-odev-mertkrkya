@@ -50,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Service\\JWTProject.Service.csproj",
+      "projectUniqueName": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Service\\JWTProject.Service.csproj",
       "projectName": "JWTProject.Service",
-      "projectPath": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Service\\JWTProject.Service.csproj",
+      "projectPath": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Service\\JWTProject.Service.csproj",
       "packagesPath": "C:\\Users\\karak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Service\\obj\\",
+      "outputPath": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\karak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,8 +71,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Data\\JWTProject.Data.csproj": {
-              "projectPath": "C:\\Users\\karak\\source\\repos\\Mert-Karakaya-3.Odev\\JWTProject.Data\\JWTProject.Data.csproj"
+            "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Data\\JWTProject.Data.csproj": {
+              "projectPath": "C:\\Users\\karak\\Documents\\GitHub\\3-hafta-odev-mertkrkya\\Mert-Karakaya-3.Odev\\JWTProject.Data\\JWTProject.Data.csproj"
             }
           }
         }
