@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using CompanyAPI.Core.Entities;
+using JWTProject.Core.Entities;
 using JWTProject.Core.Dto;
 
-namespace JWTProject.Core
+namespace JWTProject.Core.Services
 {
     public interface IAuthenticationService
     {

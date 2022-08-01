@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using JWTProject.Core.Dto;
 using JWTProject.Core.Models;
 
-namespace JWTProject.Core
+namespace JWTProject.Core.Services
 {
     public interface ITokenService
     {

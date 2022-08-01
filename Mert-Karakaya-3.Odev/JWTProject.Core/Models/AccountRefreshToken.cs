@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JWTProject.Core.Models
 {
-    class AccountRefreshToken
+    public class AccountRefreshToken
     {
         public int AccountId { get; set; }
         public string Code { get; set; }

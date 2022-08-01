@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CompanyAPI.Core.Entities;
+using JWTProject.Core.Entities;
 
-namespace JWTProject.Core
+namespace JWTProject.Core.Services
 {
     public interface IBaseService<Dto, T>
     {

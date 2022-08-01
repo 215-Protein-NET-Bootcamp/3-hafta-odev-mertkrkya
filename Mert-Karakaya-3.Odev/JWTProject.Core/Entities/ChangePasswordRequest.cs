@@ -5,7 +5,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JWTProject.Core
+namespace JWTProject.Core.Entities
 {
     public class ChangePasswordRequest
     {

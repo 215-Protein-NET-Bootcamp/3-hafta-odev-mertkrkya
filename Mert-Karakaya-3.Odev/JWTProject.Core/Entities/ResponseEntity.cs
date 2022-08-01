@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace CompanyAPI.Core.Entities
+namespace JWTProject.Core.Entities
 {
     public class ResponseEntity
     {

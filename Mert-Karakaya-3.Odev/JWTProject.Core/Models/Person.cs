@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JWTProject.Core.Models
 {
-    public class Person
+    public class Person : BaseModel
     {
         public int AccountId { get; set; }
         public string FirstName { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace JWTProject.Core
+namespace JWTProject.Core.UnitofWork
 {
     public interface IUnitofWork
     {
