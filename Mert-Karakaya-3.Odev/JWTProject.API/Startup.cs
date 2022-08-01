@@ -69,7 +69,7 @@ namespace JWTProject.API
                 x.SaveToken = true;
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true, // default True
+                    ValidateIssuer = false, // default True
                     ValidIssuer = JwtConfig.Issuer,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(JwtConfig.Secret)),
@@ -126,6 +126,8 @@ namespace JWTProject.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

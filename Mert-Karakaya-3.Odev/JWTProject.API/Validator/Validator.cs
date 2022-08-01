@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using JWTProject.Core.Dto;
 using JWTProject.Core.Entities;
+using JWTProject.Core.Models;
 using JWTProject.Core.Repositories;
 using JWTProject.Core.Services;
 using JWTProject.Data.Context;
@@ -56,6 +58,30 @@ namespace JWTProject.API.Validator
                 return "Name boş gönderilemez.";
             return "";
         }
+        public static string PersonValidator(PersonDto request, AppDbContext dbctx = null)
+        {
+            if (request == null)
+            {
+                return "Person nesnesi boş gönderilemez.";
+            }
+
+            if (dbctx == null)
+                dbctx = new AppDbContext();
+            if (string.IsNullOrWhiteSpace(request.FirstName))
+                return "FirstName boş gönderilemez.";
+            if (string.IsNullOrWhiteSpace(request.LastName))
+                return "LastName boş gönderilemez.";
+            var controlAccount = dbctx.Accounts.FirstOrDefault(r => r.Id == request.AccountId);
+            if (controlAccount == null)
+                return "Bu Account bulunamamıştır.";
+            if (!string.IsNullOrWhiteSpace(request.Email))
+                if (!IsValidEmail(request.Email))
+                    return "Geçersiz Email";
+            if(!string.IsNullOrWhiteSpace(request.Phone))
+                if (!IsPhoneNumber(request.Phone))
+                    return "Geçersiz Telefon Numarası";
+            return "";
+        }
         public static bool IsValidEmail(string email)
         {
             try
@@ -67,6 +93,15 @@ namespace JWTProject.API.Validator
             {
                 return false;
             }
+        }
+        public static bool IsPhoneNumber(string number)
+        {
+            if (number.Length < 10 || number.Length > 13)
+                return false;
+            number = number.Replace("+", "");
+            if (!ulong.TryParse(number, out ulong n))
+                return false;
+            return true;
         }
 
     }
