@@ -50,17 +50,5 @@ namespace JWTProject.API.Controllers
                 return BadRequest(result);
             return Ok(result);
         }
-        [HttpPost("RevokeRefreshToken")]
-        public async Task<IActionResult> RevokeRefreshToken(string refreshToken)
-        {
-            if (string.IsNullOrWhiteSpace(refreshToken))
-            {
-                return BadRequest(new ResponseEntity("Refresh Token boş gönderilemez."));
-            }
-            var result = await _authenticationService.RevokeRefreshTokenAsync(refreshToken);
-            if (!result.isSuccess)
-                return BadRequest(result);
-            return Ok(result);
-        }
     }
 }

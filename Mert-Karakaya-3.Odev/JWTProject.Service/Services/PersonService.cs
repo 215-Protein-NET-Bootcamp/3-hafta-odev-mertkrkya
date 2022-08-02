@@ -84,5 +84,23 @@ namespace JWTProject.Service.Services
                 return new ResponseEntity("Person Get People By Account Id Error");
             }
         }
+        public override async Task<ResponseEntity> DeleteAsync(int id)
+        {
+            try
+            {
+                var deleteEntity = await personRepository.GetByIdAsync(id);
+                if (deleteEntity == null)
+                {
+                    return new ResponseEntity("No Data");
+                }
+                personRepository.Delete(deleteEntity);
+                _unitofWork.Commit();
+                return new ResponseEntity(deleteEntity);
+            }
+            catch (Exception e)
+            {
+                return new ResponseEntity("Delete Error");
+            }
+        }
     }
 }

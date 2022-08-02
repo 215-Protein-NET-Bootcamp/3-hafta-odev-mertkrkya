@@ -26,6 +26,8 @@ namespace JWTProject.Service.Services
         {
             try
             {
+                if(entity.Id != 0)
+                    return new ResponseEntity("Id 0'dan farklı değer girilemez.");
                 var tempEntity = _mapper.Map<AccountDto, Account>(entity);
                 tempEntity.LastActivity = DateTime.Now;;
                 tempEntity.CreationTime = DateTime.Now;

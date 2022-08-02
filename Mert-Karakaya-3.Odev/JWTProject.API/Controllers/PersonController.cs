@@ -65,8 +65,12 @@ namespace JWTProject.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] PersonDto entity)
         {
-
-            var validationResult = Validator.Validator.PersonValidator(entity);
+            int accountId = -1;
+            var controlAccountId = User.Claims.FirstOrDefault(r => r.Type == "AccountId");
+            if (controlAccountId == null)
+                return BadRequest(new ResponseEntity("Öngörülemeyen bir hata meydana geldi."));
+            accountId = Convert.ToInt32(controlAccountId.Value);
+            var validationResult = Validator.Validator.PersonValidator(entity, accountId);
             if (!string.IsNullOrWhiteSpace(validationResult))
             {
                 return BadRequest(new ResponseEntity(validationResult));
@@ -84,8 +88,12 @@ namespace JWTProject.API.Controllers
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateAsync(int id, [FromBody] PersonDto entity)
         {
-
-            var validationResult = Validator.Validator.PersonValidator(entity);
+            int accountId = -1;
+            var controlAccountId = User.Claims.FirstOrDefault(r => r.Type == "AccountId");
+            if (controlAccountId == null)
+                return BadRequest(new ResponseEntity("Öngörülemeyen bir hata meydana geldi."));
+            accountId = Convert.ToInt32(controlAccountId.Value);
+            var validationResult = Validator.Validator.PersonValidator(entity, accountId);
             if (!string.IsNullOrWhiteSpace(validationResult))
             {
                 return BadRequest(new ResponseEntity(validationResult));
@@ -101,6 +109,16 @@ namespace JWTProject.API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
+            int accountId = -1;
+            var controlAccountId = User.Claims.FirstOrDefault(r => r.Type == "AccountId");
+            if (controlAccountId == null)
+                return BadRequest(new ResponseEntity("Öngörülemeyen bir hata meydana geldi."));
+            accountId = Convert.ToInt32(controlAccountId.Value);
+            var validationResult = Validator.Validator.PersonDeleteValidator(id, accountId);
+            if (!string.IsNullOrWhiteSpace(validationResult))
+            {
+                return BadRequest(new ResponseEntity(validationResult));
+            }
             var result = await _service.DeleteAsync(id);
 
             if (!result.isSuccess)

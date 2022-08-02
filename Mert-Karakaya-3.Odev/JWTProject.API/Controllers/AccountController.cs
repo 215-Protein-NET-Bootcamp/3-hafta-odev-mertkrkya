@@ -50,7 +50,6 @@ namespace JWTProject.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] AccountDto entity)
         {
-
             var validationResult = Validator.Validator.AccountValidator(entity);
             if (!string.IsNullOrWhiteSpace(validationResult))
             {
@@ -69,7 +68,13 @@ namespace JWTProject.API.Controllers
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateAsync(int id, [FromBody] AccountDto entity)
         {
-
+            int accountId = -1;
+            var controlAccountId = User.Claims.FirstOrDefault(r => r.Type == "AccountId");
+            if (controlAccountId == null)
+                return BadRequest(new ResponseEntity("Öngörülemeyen bir hata meydana geldi."));
+            accountId = Convert.ToInt32(controlAccountId.Value);
+            if (accountId != id)
+                return BadRequest(new ResponseEntity("Yetkisiz Account"));
             var validationResult = Validator.Validator.AccountValidator(entity);
             if (!string.IsNullOrWhiteSpace(validationResult))
             {

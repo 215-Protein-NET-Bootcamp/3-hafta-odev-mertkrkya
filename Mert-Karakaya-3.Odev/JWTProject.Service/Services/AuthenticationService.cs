@@ -69,15 +69,5 @@ namespace JWTProject.Service.Services
             await _unitofWork.CommitAsync();
             return new ResponseEntity(token);
         }
-
-        public async Task<ResponseEntity> RevokeRefreshTokenAsync(string refreshToken)
-        {
-            var existRefreshToken = await _refreshTokenRepository.Find(r => r.Code == refreshToken).FirstOrDefaultAsync();
-            if (existRefreshToken == null)
-                return new ResponseEntity("Refresh Token bulunamadı.");
-            _refreshTokenRepository.Delete(existRefreshToken);
-            await _unitofWork.CommitAsync();
-            return new ResponseEntity(null);
-        }
     }
 }

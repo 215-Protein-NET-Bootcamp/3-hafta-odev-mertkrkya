@@ -58,7 +58,7 @@ namespace JWTProject.API.Validator
                 return "Name boş gönderilemez.";
             return "";
         }
-        public static string PersonValidator(PersonDto request, AppDbContext dbctx = null)
+        public static string PersonValidator(PersonDto request, int accountId, AppDbContext dbctx = null)
         {
             if (request == null)
             {
@@ -71,6 +71,8 @@ namespace JWTProject.API.Validator
                 return "FirstName boş gönderilemez.";
             if (string.IsNullOrWhiteSpace(request.LastName))
                 return "LastName boş gönderilemez.";
+            if (accountId != request.AccountId)
+                return "Yetkisiz AccountId.";
             var controlAccount = dbctx.Accounts.FirstOrDefault(r => r.Id == request.AccountId);
             if (controlAccount == null)
                 return "Bu Account bulunamamıştır.";
@@ -80,6 +82,17 @@ namespace JWTProject.API.Validator
             if(!string.IsNullOrWhiteSpace(request.Phone))
                 if (!IsPhoneNumber(request.Phone))
                     return "Geçersiz Telefon Numarası";
+            return "";
+        }
+        public static string PersonDeleteValidator(int personId, int accountId, AppDbContext dbctx = null)
+        {
+            if (dbctx == null)
+                dbctx = new AppDbContext();
+            var person = dbctx.People.FirstOrDefault(r => r.Id == personId);
+            if (person == null)
+                return "Geçersiz Person";
+            if (person.AccountId != accountId)
+                return "Yetkisiz Account";
             return "";
         }
         public static bool IsValidEmail(string email)
